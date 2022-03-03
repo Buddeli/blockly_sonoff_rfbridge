@@ -1,0 +1,217 @@
+<xml xmlns="https://developers.google.com/blockly/xml">
+  <block type="on" id="tEeN_Ln1b02IAfwN_`n." x="238" y="-137">
+    <field name="OID">zigbee.0.00124b00250471f0.double_click</field>
+    <field name="CONDITION">true</field>
+    <field name="ACK_CONDITION"></field>
+    <statement name="STATEMENT">
+      <block type="control" id="=/vUZ-VtU%#YL,QcSjU5">
+        <mutation xmlns="http://www.w3.org/1999/xhtml" delay_input="false"></mutation>
+        <field name="OID">0_userdata.0.Luefter.Funksteuerung.Fan_Taster_Doppelklick</field>
+        <field name="WITH_DELAY">FALSE</field>
+        <value name="VALUE">
+          <block type="logic_boolean" id="a:s7|SmWU{gJ!]o(|RA_">
+            <field name="BOOL">TRUE</field>
+          </block>
+        </value>
+        <next>
+          <block type="control" id="+[GgmH/d6~1r+almgUq,">
+            <mutation xmlns="http://www.w3.org/1999/xhtml" delay_input="true"></mutation>
+            <field name="OID">0_userdata.0.Luefter.Funksteuerung.Fan_Taster_Doppelklick</field>
+            <field name="WITH_DELAY">TRUE</field>
+            <field name="DELAY_MS">10</field>
+            <field name="UNIT">min</field>
+            <field name="CLEAR_RUNNING">FALSE</field>
+            <value name="VALUE">
+              <block type="logic_boolean" id="eXN7i.q4f.AfA]7qh|D[">
+                <field name="BOOL">FALSE</field>
+              </block>
+            </value>
+          </block>
+        </next>
+      </block>
+    </statement>
+    <next>
+      <block type="on" id="W9IW$2foYs0{MZBJlM35">
+        <field name="OID">zigbee.0.00124b00250471f0.click</field>
+        <field name="CONDITION">true</field>
+        <field name="ACK_CONDITION"></field>
+        <statement name="STATEMENT">
+          <block type="control" id="65lJObCwI*dD/`ISm~}C">
+            <mutation xmlns="http://www.w3.org/1999/xhtml" delay_input="false"></mutation>
+            <field name="OID">0_userdata.0.Luefter.Funksteuerung.Fan_Taster</field>
+            <field name="WITH_DELAY">FALSE</field>
+            <value name="VALUE">
+              <block type="logic_boolean" id="X#`46?C/?KUW_Q;__h8[">
+                <field name="BOOL">TRUE</field>
+              </block>
+            </value>
+            <next>
+              <block type="control" id=".10$W67;E#mVsd54*[}P">
+                <mutation xmlns="http://www.w3.org/1999/xhtml" delay_input="true"></mutation>
+                <field name="OID">0_userdata.0.Luefter.Funksteuerung.Fan_Taster</field>
+                <field name="WITH_DELAY">TRUE</field>
+                <field name="DELAY_MS">30</field>
+                <field name="UNIT">min</field>
+                <field name="CLEAR_RUNNING">FALSE</field>
+                <value name="VALUE">
+                  <block type="logic_boolean" id="PuFMo56Mf)-:aSTL0q_:">
+                    <field name="BOOL">FALSE</field>
+                  </block>
+                </value>
+              </block>
+            </next>
+          </block>
+        </statement>
+        <next>
+          <block type="controls_if" id="8:)G*oRH+XIM_J(mB6A%">
+            <mutation else="1"></mutation>
+            <value name="IF0">
+              <block type="get_value" id="cdKqbN-MUrd)*LHuV+BJ">
+                <field name="ATTR">val</field>
+                <field name="OID">0_userdata.0.System.Sommerzeit</field>
+              </block>
+            </value>
+            <statement name="DO0">
+              <block type="comment" id="}zTs}kHq,y;kJMn/FVO@">
+                <field name="COMMENT">Sommerzeit gleich Systemzeit</field>
+                <next>
+                  <block type="schedule" id="8;]RzU*V4,f/!vP|q@Rm">
+                    <field name="SCHEDULE">0 11,17 * * *</field>
+                    <statement name="STATEMENT">
+                      <block type="control" id="Q?r9*Yu]Hs9$bzmrIdn6">
+                        <mutation xmlns="http://www.w3.org/1999/xhtml" delay_input="false"></mutation>
+                        <field name="OID">0_userdata.0.Luefter.Funksteuerung.Fan_automatik</field>
+                        <field name="WITH_DELAY">FALSE</field>
+                        <value name="VALUE">
+                          <block type="logic_boolean" id="fy2tLw$%^miM!,RD`+~i">
+                            <field name="BOOL">TRUE</field>
+                          </block>
+                        </value>
+                        <next>
+                          <block type="control" id="ZzVp`~SoS578VJH6LD;_">
+                            <mutation xmlns="http://www.w3.org/1999/xhtml" delay_input="true"></mutation>
+                            <field name="OID">0_userdata.0.Luefter.Funksteuerung.Fan_automatik</field>
+                            <field name="WITH_DELAY">TRUE</field>
+                            <field name="DELAY_MS">120</field>
+                            <field name="UNIT">min</field>
+                            <field name="CLEAR_RUNNING">FALSE</field>
+                            <value name="VALUE">
+                              <block type="logic_boolean" id="N;aj7R2)NE{_}gSY/=#O">
+                                <field name="BOOL">FALSE</field>
+                              </block>
+                            </value>
+                          </block>
+                        </next>
+                      </block>
+                    </statement>
+                    <next>
+                      <block type="schedule" id="4u,K,uaz%wzMbSNoXE|4">
+                        <field name="SCHEDULE">0 7 * * *</field>
+                        <statement name="STATEMENT">
+                          <block type="control" id="_L4)I5:W[O)yp[0+^aD#">
+                            <mutation xmlns="http://www.w3.org/1999/xhtml" delay_input="false"></mutation>
+                            <field name="OID">0_userdata.0.Luefter.Funksteuerung.Fan_automatik</field>
+                            <field name="WITH_DELAY">FALSE</field>
+                            <value name="VALUE">
+                              <block type="logic_boolean" id="=_[id%oHL/l$fGY*4ETp">
+                                <field name="BOOL">TRUE</field>
+                              </block>
+                            </value>
+                            <next>
+                              <block type="control" id="=l2?qaHlD0;%s`%*]kb)">
+                                <mutation xmlns="http://www.w3.org/1999/xhtml" delay_input="true"></mutation>
+                                <field name="OID">0_userdata.0.Luefter.Funksteuerung.Fan_automatik</field>
+                                <field name="WITH_DELAY">TRUE</field>
+                                <field name="DELAY_MS">90</field>
+                                <field name="UNIT">min</field>
+                                <field name="CLEAR_RUNNING">FALSE</field>
+                                <value name="VALUE">
+                                  <block type="logic_boolean" id="=T,|8Kv~%Q5UC,ZzORdr">
+                                    <field name="BOOL">FALSE</field>
+                                  </block>
+                                </value>
+                              </block>
+                            </next>
+                          </block>
+                        </statement>
+                      </block>
+                    </next>
+                  </block>
+                </next>
+              </block>
+            </statement>
+            <statement name="ELSE">
+              <block type="comment" id="^qcYc*PG8BdbXh^U3[7Y">
+                <field name="COMMENT">Winterzeit (Zeitversatz um 1h)</field>
+                <next>
+                  <block type="schedule" id="2:@*mX}DP^vUUMy%vm8!">
+                    <field name="SCHEDULE">0 10,16 * * *</field>
+                    <statement name="STATEMENT">
+                      <block type="control" id="8abmsp,:q0uZx9i5h]N%">
+                        <mutation xmlns="http://www.w3.org/1999/xhtml" delay_input="false"></mutation>
+                        <field name="OID">0_userdata.0.Luefter.Funksteuerung.Fan_automatik</field>
+                        <field name="WITH_DELAY">FALSE</field>
+                        <value name="VALUE">
+                          <block type="logic_boolean" id="j(hTcN-^h/A,P,S!(n$?">
+                            <field name="BOOL">TRUE</field>
+                          </block>
+                        </value>
+                        <next>
+                          <block type="control" id="$luXmh~/DwJ$;Ubp~Loe">
+                            <mutation xmlns="http://www.w3.org/1999/xhtml" delay_input="true"></mutation>
+                            <field name="OID">0_userdata.0.Luefter.Funksteuerung.Fan_automatik</field>
+                            <field name="WITH_DELAY">TRUE</field>
+                            <field name="DELAY_MS">120</field>
+                            <field name="UNIT">min</field>
+                            <field name="CLEAR_RUNNING">FALSE</field>
+                            <value name="VALUE">
+                              <block type="logic_boolean" id="Y$RWwhmv)1qnBt7$yhUf">
+                                <field name="BOOL">FALSE</field>
+                              </block>
+                            </value>
+                          </block>
+                        </next>
+                      </block>
+                    </statement>
+                    <next>
+                      <block type="schedule" id="N~/,yQ:t1hp3@d,R7FcZ">
+                        <field name="SCHEDULE">0 6 * * *</field>
+                        <statement name="STATEMENT">
+                          <block type="control" id="wP!-4(Qe7uwYsvCdIT;o">
+                            <mutation xmlns="http://www.w3.org/1999/xhtml" delay_input="false"></mutation>
+                            <field name="OID">0_userdata.0.Luefter.Funksteuerung.Fan_automatik</field>
+                            <field name="WITH_DELAY">FALSE</field>
+                            <value name="VALUE">
+                              <block type="logic_boolean" id=".qk|L#:b18JI=c$O}{oR">
+                                <field name="BOOL">TRUE</field>
+                              </block>
+                            </value>
+                            <next>
+                              <block type="control" id="7Mw{Q?`OZObOq7i}97aK">
+                                <mutation xmlns="http://www.w3.org/1999/xhtml" delay_input="true"></mutation>
+                                <field name="OID">0_userdata.0.Luefter.Funksteuerung.Fan_automatik</field>
+                                <field name="WITH_DELAY">TRUE</field>
+                                <field name="DELAY_MS">90</field>
+                                <field name="UNIT">min</field>
+                                <field name="CLEAR_RUNNING">FALSE</field>
+                                <value name="VALUE">
+                                  <block type="logic_boolean" id="0F1~Jh=1n`#*Ic#:|rL^">
+                                    <field name="BOOL">FALSE</field>
+                                  </block>
+                                </value>
+                              </block>
+                            </next>
+                          </block>
+                        </statement>
+                      </block>
+                    </next>
+                  </block>
+                </next>
+              </block>
+            </statement>
+          </block>
+        </next>
+      </block>
+    </next>
+  </block>
+</xml>

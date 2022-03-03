@@ -1,0 +1,386 @@
+<xml xmlns="https://developers.google.com/blockly/xml">
+  <block type="on" id="7Myyw^2;}e9(;Jh)z3Bk" x="183" y="101">
+    <field name="OID">mqtt.0.tele.tasmota_luefter.RESULT</field>
+    <field name="CONDITION">ne</field>
+    <field name="ACK_CONDITION"></field>
+    <statement name="STATEMENT">
+      <block type="controls_if" id=",dxux=7%OeDSAvYB,!6?">
+        <value name="IF0">
+          <block type="logic_compare" id="LQ|RLVoW:hLEK0*f.eI{">
+            <field name="OP">EQ</field>
+            <value name="A">
+              <block type="convert_jsonata" id="Wqi.JfiT(O+$4}G[]_Sy">
+                <value name="EXPRESSION">
+                  <shadow type="text" id="mKzuFjb`K8*GIMcWQ9%_">
+                    <field name="TEXT">RfReceived.Data</field>
+                  </shadow>
+                </value>
+                <value name="TARGET">
+                  <block type="convert_json2object" id="z?BH$rYy)%2n([E.dp-E">
+                    <value name="VALUE">
+                      <block type="on_source" id="jSyJO@H5+$`+Q|{bC*(+">
+                        <field name="ATTR">state.val</field>
+                      </block>
+                    </value>
+                  </block>
+                </value>
+              </block>
+            </value>
+            <value name="B">
+              <block type="text" id="]$H{b}4=8CX%hcWydlqa">
+                <field name="TEXT">083260</field>
+              </block>
+            </value>
+          </block>
+        </value>
+        <statement name="DO0">
+          <block type="control" id="s5t?{LX-mR$}jb[ES=wO">
+            <mutation xmlns="http://www.w3.org/1999/xhtml" delay_input="false"></mutation>
+            <field name="OID">0_userdata.0.Luefter.Fan-State</field>
+            <field name="WITH_DELAY">FALSE</field>
+            <value name="VALUE">
+              <block type="math_number" id="w$`:l}tTLH#4UI|0fIM7">
+                <field name="NUM">0</field>
+              </block>
+            </value>
+            <next>
+              <block type="control" id="|NSU[|1K82UU%M2N[hmA">
+                <mutation xmlns="http://www.w3.org/1999/xhtml" delay_input="false"></mutation>
+                <field name="OID">0_userdata.0.Luefter.Fan-on</field>
+                <field name="WITH_DELAY">FALSE</field>
+                <value name="VALUE">
+                  <block type="logic_boolean" id="zV}dYu@QFJS~+.j/WeB,">
+                    <field name="BOOL">FALSE</field>
+                  </block>
+                </value>
+              </block>
+            </next>
+          </block>
+        </statement>
+        <next>
+          <block type="controls_if" id="x$uR35=yXV/(bm8|~F$x">
+            <value name="IF0">
+              <block type="logic_compare" id="x(WRMWl~g~1ZPg4Q0yCE">
+                <field name="OP">EQ</field>
+                <value name="A">
+                  <block type="convert_jsonata" id="W/m3qeMFg`j|p6RF@?NL">
+                    <value name="EXPRESSION">
+                      <shadow type="text" id="q5zd12%D]9iJkHI-S}(W">
+                        <field name="TEXT">RfReceived.Data</field>
+                      </shadow>
+                    </value>
+                    <value name="TARGET">
+                      <block type="convert_json2object" id="0,~M,M|R[blesh]73K%w">
+                        <value name="VALUE">
+                          <block type="on_source" id="^c3gFLC+E5@tZF;X57BP">
+                            <field name="ATTR">state.val</field>
+                          </block>
+                        </value>
+                      </block>
+                    </value>
+                  </block>
+                </value>
+                <value name="B">
+                  <block type="text" id="|,QK[nwp_v?KgE(1jCNE">
+                    <field name="TEXT">08326E</field>
+                  </block>
+                </value>
+              </block>
+            </value>
+            <statement name="DO0">
+              <block type="control" id=";^TUeisFq,k@lnBvt3ZE">
+                <mutation xmlns="http://www.w3.org/1999/xhtml" delay_input="false"></mutation>
+                <field name="OID">0_userdata.0.Luefter.Fan-State</field>
+                <field name="WITH_DELAY">FALSE</field>
+                <value name="VALUE">
+                  <block type="math_number" id=".%]?^:QPL#?r:a)YgS@k">
+                    <field name="NUM">9</field>
+                  </block>
+                </value>
+                <next>
+                  <block type="control" id="T`]r%hRH8ycbh+rnHfyY">
+                    <mutation xmlns="http://www.w3.org/1999/xhtml" delay_input="false"></mutation>
+                    <field name="OID">0_userdata.0.Luefter.Fan-on</field>
+                    <field name="WITH_DELAY">FALSE</field>
+                    <value name="VALUE">
+                      <block type="logic_boolean" id=",hh1MYLHd:oOeE^`2($S">
+                        <field name="BOOL">FALSE</field>
+                      </block>
+                    </value>
+                  </block>
+                </next>
+              </block>
+            </statement>
+            <next>
+              <block type="controls_if" id="L/}j|u=.)3eoAU|@+/pb">
+                <value name="IF0">
+                  <block type="logic_operation" id="`%wcVY~gxjJEkKo)LcKm" inline="false">
+                    <field name="OP">OR</field>
+                    <value name="A">
+                      <block type="logic_compare" id="qMvZq]Ctx|ITyan;]V9~">
+                        <field name="OP">EQ</field>
+                        <value name="A">
+                          <block type="convert_jsonata" id="a6+rCmUo6om6?UJlh=;s">
+                            <value name="EXPRESSION">
+                              <shadow type="text" id="#wwU*=Vy+}_a36$fwuuD">
+                                <field name="TEXT">RfReceived.Data</field>
+                              </shadow>
+                            </value>
+                            <value name="TARGET">
+                              <block type="convert_json2object" id="V6R-qcg4A3c.d!wB!Svn">
+                                <value name="VALUE">
+                                  <block type="on_source" id="-P,^ez{d9zcoLVkWW%Ja">
+                                    <field name="ATTR">state.val</field>
+                                  </block>
+                                </value>
+                              </block>
+                            </value>
+                          </block>
+                        </value>
+                        <value name="B">
+                          <block type="text" id="Tt(5YzlSWl/EhP|!V+Pu">
+                            <field name="TEXT">083266</field>
+                          </block>
+                        </value>
+                      </block>
+                    </value>
+                    <value name="B">
+                      <block type="logic_compare" id="X.x*HLdGVgWzR37^LMsu">
+                        <field name="OP">EQ</field>
+                        <value name="A">
+                          <block type="convert_jsonata" id="8dgMDXY@q]vLX)@(=`^l">
+                            <value name="EXPRESSION">
+                              <shadow type="text" id="a{QUE}h*Fz9@5j^Z:Y[o">
+                                <field name="TEXT">RfReceived.Data</field>
+                              </shadow>
+                            </value>
+                            <value name="TARGET">
+                              <block type="convert_json2object" id="oSRHgtxnm1RiEpJ{()EP">
+                                <value name="VALUE">
+                                  <block type="on_source" id="]S`){qFTz%U@W`@,mzQA">
+                                    <field name="ATTR">state.val</field>
+                                  </block>
+                                </value>
+                              </block>
+                            </value>
+                          </block>
+                        </value>
+                        <value name="B">
+                          <block type="text" id="ub0BFX,RA6L.+I7yLV9(">
+                            <field name="TEXT">083267</field>
+                          </block>
+                        </value>
+                      </block>
+                    </value>
+                  </block>
+                </value>
+                <statement name="DO0">
+                  <block type="control" id="AOAk-`0=19SPt%Yo;E_e">
+                    <mutation xmlns="http://www.w3.org/1999/xhtml" delay_input="false"></mutation>
+                    <field name="OID">0_userdata.0.Luefter.Fan-State</field>
+                    <field name="WITH_DELAY">FALSE</field>
+                    <value name="VALUE">
+                      <block type="math_number" id="bHviD/.D38Ytx{pJ-/*S">
+                        <field name="NUM">1</field>
+                      </block>
+                    </value>
+                    <next>
+                      <block type="control" id="5yws_o/Z|WNOq7~Aok52">
+                        <mutation xmlns="http://www.w3.org/1999/xhtml" delay_input="false"></mutation>
+                        <field name="OID">0_userdata.0.Luefter.Fan-on</field>
+                        <field name="WITH_DELAY">FALSE</field>
+                        <value name="VALUE">
+                          <block type="logic_boolean" id="JJ+MT3*p:mvRM}Wlsv}+">
+                            <field name="BOOL">TRUE</field>
+                          </block>
+                        </value>
+                      </block>
+                    </next>
+                  </block>
+                </statement>
+                <next>
+                  <block type="controls_if" id=")Y]5v3#S4N$1G-xb,mCg">
+                    <value name="IF0">
+                      <block type="logic_operation" id="znwhI]_I-1DWK/83xKxZ" inline="false">
+                        <field name="OP">OR</field>
+                        <value name="A">
+                          <block type="logic_compare" id="zhf#kdFNEe~*W^)dVPXz">
+                            <field name="OP">EQ</field>
+                            <value name="A">
+                              <block type="convert_jsonata" id="d=b9Uc[~]`m,r_b:St7n">
+                                <value name="EXPRESSION">
+                                  <shadow type="text" id="^k!NrWa|,+G{1}:q9pN+">
+                                    <field name="TEXT">RfReceived.Data</field>
+                                  </shadow>
+                                </value>
+                                <value name="TARGET">
+                                  <block type="convert_json2object" id="f6kCKtT%82zUjJwWkn-!">
+                                    <value name="VALUE">
+                                      <block type="on_source" id="/rv}x0TV|g/Bk`rg#zCB">
+                                        <field name="ATTR">state.val</field>
+                                      </block>
+                                    </value>
+                                  </block>
+                                </value>
+                              </block>
+                            </value>
+                            <value name="B">
+                              <block type="text" id=":zuEh3;(y;c?}2-(*i)h">
+                                <field name="TEXT">08326A</field>
+                              </block>
+                            </value>
+                          </block>
+                        </value>
+                        <value name="B">
+                          <block type="logic_compare" id="Kd2/Nuw3GX8~gTJsrYNA">
+                            <field name="OP">EQ</field>
+                            <value name="A">
+                              <block type="convert_jsonata" id="Qz#?bRQG;I3%[5P43?X-">
+                                <value name="EXPRESSION">
+                                  <shadow type="text" id="VZ){uv[FHcw-JHL3}EnQ">
+                                    <field name="TEXT">RfReceived.Data</field>
+                                  </shadow>
+                                </value>
+                                <value name="TARGET">
+                                  <block type="convert_json2object" id="6J;I}`]GVGa~ev72i[zs">
+                                    <value name="VALUE">
+                                      <block type="on_source" id="6/n-fAw$3d+_BdH$}8!u">
+                                        <field name="ATTR">state.val</field>
+                                      </block>
+                                    </value>
+                                  </block>
+                                </value>
+                              </block>
+                            </value>
+                            <value name="B">
+                              <block type="text" id="Q;fT6cnX$;Pb7LZsf9Re">
+                                <field name="TEXT">08326B</field>
+                              </block>
+                            </value>
+                          </block>
+                        </value>
+                      </block>
+                    </value>
+                    <statement name="DO0">
+                      <block type="control" id="J?i?DuAd-`[M|I5eH{TA">
+                        <mutation xmlns="http://www.w3.org/1999/xhtml" delay_input="false"></mutation>
+                        <field name="OID">0_userdata.0.Luefter.Fan-State</field>
+                        <field name="WITH_DELAY">FALSE</field>
+                        <value name="VALUE">
+                          <block type="math_number" id="I!Gf_1a0b;{iz#!MWEPe">
+                            <field name="NUM">2</field>
+                          </block>
+                        </value>
+                        <next>
+                          <block type="control" id="qznO#rv[FU]QQN6S@$~c">
+                            <mutation xmlns="http://www.w3.org/1999/xhtml" delay_input="false"></mutation>
+                            <field name="OID">0_userdata.0.Luefter.Fan-on</field>
+                            <field name="WITH_DELAY">FALSE</field>
+                            <value name="VALUE">
+                              <block type="logic_boolean" id="j(AH1Eo{}lI1?~U.gXmM">
+                                <field name="BOOL">TRUE</field>
+                              </block>
+                            </value>
+                          </block>
+                        </next>
+                      </block>
+                    </statement>
+                    <next>
+                      <block type="controls_if" id="{p-%l987,;iedfID[Np{">
+                        <value name="IF0">
+                          <block type="logic_operation" id="uRjB++JWz($G.18^Vd%w" inline="false">
+                            <field name="OP">OR</field>
+                            <value name="A">
+                              <block type="logic_compare" id="3z8ZE,~B}NhZ@!XnApmD">
+                                <field name="OP">EQ</field>
+                                <value name="A">
+                                  <block type="convert_jsonata" id="yP!_^s_hjS3LUbSI-25@">
+                                    <value name="EXPRESSION">
+                                      <shadow type="text" id="^h(tr]_AYe(/^z1K]r$P">
+                                        <field name="TEXT">RfReceived.Data</field>
+                                      </shadow>
+                                    </value>
+                                    <value name="TARGET">
+                                      <block type="convert_json2object" id=".AG(a9.;MRP,X:G;b+lk">
+                                        <value name="VALUE">
+                                          <block type="on_source" id="wXg_!o8g-edAG~Wy4fij">
+                                            <field name="ATTR">state.val</field>
+                                          </block>
+                                        </value>
+                                      </block>
+                                    </value>
+                                  </block>
+                                </value>
+                                <value name="B">
+                                  <block type="text" id="xqf6)gP91b%LD)=e`:A9">
+                                    <field name="TEXT">08326C</field>
+                                  </block>
+                                </value>
+                              </block>
+                            </value>
+                            <value name="B">
+                              <block type="logic_compare" id="bXkVCtBoEW6Z)?ufJAZl">
+                                <field name="OP">EQ</field>
+                                <value name="A">
+                                  <block type="convert_jsonata" id="+C9LZaM2mqj8D@,nea-[">
+                                    <value name="EXPRESSION">
+                                      <shadow type="text" id="Yp|48fscACU6}/4QdO)q">
+                                        <field name="TEXT">RfReceived.Data</field>
+                                      </shadow>
+                                    </value>
+                                    <value name="TARGET">
+                                      <block type="convert_json2object" id="9s![InA:3.tUJSJ]N=XS">
+                                        <value name="VALUE">
+                                          <block type="on_source" id=".#gfL$?[g;}i(pit|.PF">
+                                            <field name="ATTR">state.val</field>
+                                          </block>
+                                        </value>
+                                      </block>
+                                    </value>
+                                  </block>
+                                </value>
+                                <value name="B">
+                                  <block type="text" id="+aktnzgJ@9IH55K22KD0">
+                                    <field name="TEXT">08326D</field>
+                                  </block>
+                                </value>
+                              </block>
+                            </value>
+                          </block>
+                        </value>
+                        <statement name="DO0">
+                          <block type="control" id="z3Bl%)=:`9lPJn47),m~">
+                            <mutation xmlns="http://www.w3.org/1999/xhtml" delay_input="false"></mutation>
+                            <field name="OID">0_userdata.0.Luefter.Fan-State</field>
+                            <field name="WITH_DELAY">FALSE</field>
+                            <value name="VALUE">
+                              <block type="math_number" id="D,o/X1]]V]qfb0upO=pr">
+                                <field name="NUM">3</field>
+                              </block>
+                            </value>
+                            <next>
+                              <block type="control" id="I*r.!-SEHqHKTon4R=:a">
+                                <mutation xmlns="http://www.w3.org/1999/xhtml" delay_input="false"></mutation>
+                                <field name="OID">0_userdata.0.Luefter.Fan-on</field>
+                                <field name="WITH_DELAY">FALSE</field>
+                                <value name="VALUE">
+                                  <block type="logic_boolean" id=".HO[5Y/H+RVgK%NsH01[">
+                                    <field name="BOOL">TRUE</field>
+                                  </block>
+                                </value>
+                              </block>
+                            </next>
+                          </block>
+                        </statement>
+                      </block>
+                    </next>
+                  </block>
+                </next>
+              </block>
+            </next>
+          </block>
+        </next>
+      </block>
+    </statement>
+  </block>
+</xml>

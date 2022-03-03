@@ -1,0 +1,388 @@
+<xml xmlns="https://developers.google.com/blockly/xml">
+  <block type="on" id="ezK7r=o+=CoN]9M*P5EB" x="163" y="788">
+    <field name="OID">0_userdata.0.Luefter.Fan-soll</field>
+    <field name="CONDITION">ne</field>
+    <field name="ACK_CONDITION"></field>
+    <statement name="STATEMENT">
+      <block type="comment" id="CGYfU-/?qwr)LU9(vFL@">
+        <field name="COMMENT">Ausschalten</field>
+        <next>
+          <block type="controls_if" id="=L@KMBLwH*,1aq7NkDj6">
+            <value name="IF0">
+              <block type="logic_operation" id="2CH4Be3u+qDww@~pmDes">
+                <field name="OP">AND</field>
+                <value name="A">
+                  <block type="logic_compare" id="pTpA8`9pSq|`5^X^]x({">
+                    <field name="OP">EQ</field>
+                    <value name="A">
+                      <block type="get_value" id="k^|h*Nd[(*w5+jaFJPrC">
+                        <field name="ATTR">val</field>
+                        <field name="OID">0_userdata.0.Luefter.Fan-soll</field>
+                      </block>
+                    </value>
+                    <value name="B">
+                      <block type="math_number" id="0XZr6Smo_ojjbEeyi79[">
+                        <field name="NUM">0</field>
+                      </block>
+                    </value>
+                  </block>
+                </value>
+                <value name="B">
+                  <block type="get_value" id="4i+9kQ:;H`OiLx|k`8DD">
+                    <field name="ATTR">val</field>
+                    <field name="OID">0_userdata.0.Luefter.Fan-on</field>
+                  </block>
+                </value>
+              </block>
+            </value>
+            <statement name="DO0">
+              <block type="control" id="4Zner/9-MItESi#Qkm;V">
+                <mutation xmlns="http://www.w3.org/1999/xhtml" delay_input="false"></mutation>
+                <field name="OID">mqtt.0.cmnd.tasmota_luefter.RfSync</field>
+                <field name="WITH_DELAY">FALSE</field>
+                <value name="VALUE">
+                  <block type="text" id="uavo~s0tuxtd.uO@HQ.4">
+                    <field name="TEXT">18410</field>
+                  </block>
+                </value>
+                <next>
+                  <block type="control" id="Xy]LJGmO?QG??^YBaruI">
+                    <mutation xmlns="http://www.w3.org/1999/xhtml" delay_input="true"></mutation>
+                    <field name="OID">mqtt.0.cmnd.tasmota_luefter.RfLow</field>
+                    <field name="WITH_DELAY">TRUE</field>
+                    <field name="DELAY_MS">500</field>
+                    <field name="UNIT">ms</field>
+                    <field name="CLEAR_RUNNING">FALSE</field>
+                    <value name="VALUE">
+                      <block type="text" id="^q~/^8/P0.-tAJ~rIW)K">
+                        <field name="TEXT">600</field>
+                      </block>
+                    </value>
+                    <next>
+                      <block type="control" id="BbFn@@EG(}f?LnyTcniu">
+                        <mutation xmlns="http://www.w3.org/1999/xhtml" delay_input="true"></mutation>
+                        <field name="OID">mqtt.0.cmnd.tasmota_luefter.RfHigh</field>
+                        <field name="WITH_DELAY">TRUE</field>
+                        <field name="DELAY_MS">1000</field>
+                        <field name="UNIT">ms</field>
+                        <field name="CLEAR_RUNNING">FALSE</field>
+                        <value name="VALUE">
+                          <block type="text" id="]423+#]Rs2QaK}!cR{c|">
+                            <field name="TEXT">1770</field>
+                          </block>
+                        </value>
+                        <next>
+                          <block type="control" id="}FiOuZgR~~]wk~K+8lyL">
+                            <mutation xmlns="http://www.w3.org/1999/xhtml" delay_input="true"></mutation>
+                            <field name="OID">mqtt.0.cmnd.tasmota_luefter.RfCode</field>
+                            <field name="WITH_DELAY">TRUE</field>
+                            <field name="DELAY_MS">1500</field>
+                            <field name="UNIT">ms</field>
+                            <field name="CLEAR_RUNNING">FALSE</field>
+                            <value name="VALUE">
+                              <block type="text" id="K(;a-6NNXt!WPU9_,!]Q">
+                                <field name="TEXT">#083268</field>
+                              </block>
+                            </value>
+                            <next>
+                              <block type="control" id="SWr-j:nT}vFE$KL=DBT{">
+                                <mutation xmlns="http://www.w3.org/1999/xhtml" delay_input="true"></mutation>
+                                <field name="OID">mqtt.0.cmnd.tasmota_luefter.RfCode</field>
+                                <field name="WITH_DELAY">TRUE</field>
+                                <field name="DELAY_MS">2000</field>
+                                <field name="UNIT">ms</field>
+                                <field name="CLEAR_RUNNING">FALSE</field>
+                                <value name="VALUE">
+                                  <block type="text" id="7Nd$lk}yx6zhf0Olz*]M">
+                                    <field name="TEXT">1</field>
+                                  </block>
+                                </value>
+                              </block>
+                            </next>
+                          </block>
+                        </next>
+                      </block>
+                    </next>
+                  </block>
+                </next>
+              </block>
+            </statement>
+            <next>
+              <block type="comment" id="u@M`Z`Wknv-du6F4!^^~">
+                <field name="COMMENT">Einschalten</field>
+                <next>
+                  <block type="controls_if" id="nCe_a/7}_dr:,^~$W?bf">
+                    <value name="IF0">
+                      <block type="logic_operation" id="?9tpnFa4%@q*yNIWKNx2">
+                        <field name="OP">AND</field>
+                        <value name="A">
+                          <block type="logic_compare" id="f@*3A3T@P{Ah^37MWyR9">
+                            <field name="OP">GT</field>
+                            <value name="A">
+                              <block type="get_value" id="tW!Ro2=!supS{@Hyh{8o">
+                                <field name="ATTR">val</field>
+                                <field name="OID">0_userdata.0.Luefter.Fan-soll</field>
+                              </block>
+                            </value>
+                            <value name="B">
+                              <block type="math_number" id="POV4-P6]U=Ue[Mu0L3tG">
+                                <field name="NUM">0</field>
+                              </block>
+                            </value>
+                          </block>
+                        </value>
+                        <value name="B">
+                          <block type="logic_negate" id="wG$hbmv0D9|Rzb2Z*ooQ">
+                            <value name="BOOL">
+                              <block type="get_value" id="m4q]ZX|hn2?QNuLjdp2m">
+                                <field name="ATTR">val</field>
+                                <field name="OID">0_userdata.0.Luefter.Fan-on</field>
+                              </block>
+                            </value>
+                          </block>
+                        </value>
+                      </block>
+                    </value>
+                    <statement name="DO0">
+                      <block type="control" id="]nr:QoHdlm45ymckr$|6">
+                        <mutation xmlns="http://www.w3.org/1999/xhtml" delay_input="false"></mutation>
+                        <field name="OID">mqtt.0.cmnd.tasmota_luefter.RfSync</field>
+                        <field name="WITH_DELAY">FALSE</field>
+                        <value name="VALUE">
+                          <block type="text" id="WlJme7[/seT:|_EHs`z#">
+                            <field name="TEXT">18410</field>
+                          </block>
+                        </value>
+                        <next>
+                          <block type="control" id="zmhDKA1**~vz++?bH+8$">
+                            <mutation xmlns="http://www.w3.org/1999/xhtml" delay_input="true"></mutation>
+                            <field name="OID">mqtt.0.cmnd.tasmota_luefter.RfLow</field>
+                            <field name="WITH_DELAY">TRUE</field>
+                            <field name="DELAY_MS">500</field>
+                            <field name="UNIT">ms</field>
+                            <field name="CLEAR_RUNNING">FALSE</field>
+                            <value name="VALUE">
+                              <block type="text" id="^TAN(6aGI|[7O/(JB4NT">
+                                <field name="TEXT">600</field>
+                              </block>
+                            </value>
+                            <next>
+                              <block type="control" id="n+bPuo?4qV13W*}jZp2P">
+                                <mutation xmlns="http://www.w3.org/1999/xhtml" delay_input="true"></mutation>
+                                <field name="OID">mqtt.0.cmnd.tasmota_luefter.RfHigh</field>
+                                <field name="WITH_DELAY">TRUE</field>
+                                <field name="DELAY_MS">1000</field>
+                                <field name="UNIT">ms</field>
+                                <field name="CLEAR_RUNNING">FALSE</field>
+                                <value name="VALUE">
+                                  <block type="text" id="!WB$|OD7Uwl[isKQ;)y:">
+                                    <field name="TEXT">1770</field>
+                                  </block>
+                                </value>
+                                <next>
+                                  <block type="control" id="Y,9rHyE#HA)=Qa9Ij|5i">
+                                    <mutation xmlns="http://www.w3.org/1999/xhtml" delay_input="true"></mutation>
+                                    <field name="OID">mqtt.0.cmnd.tasmota_luefter.RfCode</field>
+                                    <field name="WITH_DELAY">TRUE</field>
+                                    <field name="DELAY_MS">1500</field>
+                                    <field name="UNIT">ms</field>
+                                    <field name="CLEAR_RUNNING">FALSE</field>
+                                    <value name="VALUE">
+                                      <block type="text" id="62}/[|94uKAyUD_tX|XN">
+                                        <field name="TEXT">#083268</field>
+                                      </block>
+                                    </value>
+                                    <next>
+                                      <block type="control" id="Lpi,LTwi.^_0Y$?QbGG]">
+                                        <mutation xmlns="http://www.w3.org/1999/xhtml" delay_input="true"></mutation>
+                                        <field name="OID">mqtt.0.cmnd.tasmota_luefter.RfCode</field>
+                                        <field name="WITH_DELAY">TRUE</field>
+                                        <field name="DELAY_MS">2000</field>
+                                        <field name="UNIT">ms</field>
+                                        <field name="CLEAR_RUNNING">FALSE</field>
+                                        <value name="VALUE">
+                                          <block type="text" id="oQQ~C#2t+jS%qcLI6!Ow">
+                                            <field name="TEXT">1</field>
+                                          </block>
+                                        </value>
+                                      </block>
+                                    </next>
+                                  </block>
+                                </next>
+                              </block>
+                            </next>
+                          </block>
+                        </next>
+                      </block>
+                    </statement>
+                    <next>
+                      <block type="comment" id="]%UQ/[w?|TezV997uS$k">
+                        <field name="COMMENT">Regelung</field>
+                        <next>
+                          <block type="timeouts_wait" id="06-^cy/@F`]p9Dn~)qEY">
+                            <field name="DELAY">3</field>
+                            <field name="UNIT">sec</field>
+                            <next>
+                              <block type="controls_if" id="5@Z#U{QN,6U3hxg![p92">
+                                <value name="IF0">
+                                  <block type="logic_compare" id="@+C3OJ]Y!z9:6{nbeA|I">
+                                    <field name="OP">NEQ</field>
+                                    <value name="A">
+                                      <block type="get_value" id="wuOXg%MP4i.Mqg-{MtyP">
+                                        <field name="ATTR">val</field>
+                                        <field name="OID">0_userdata.0.Luefter.Fan-soll</field>
+                                      </block>
+                                    </value>
+                                    <value name="B">
+                                      <block type="math_number" id="B~wzg*Tr[k.[h1cVc;hY">
+                                        <field name="NUM">0</field>
+                                      </block>
+                                    </value>
+                                  </block>
+                                </value>
+                                <statement name="DO0">
+                                  <block type="controls_whileUntil" id="@^5i]aL(+79e/dRe]b4*">
+                                    <field name="MODE">UNTIL</field>
+                                    <value name="BOOL">
+                                      <block type="logic_compare" id="XI[Xy@$?q%Iot39$%+.y">
+                                        <field name="OP">EQ</field>
+                                        <value name="A">
+                                          <block type="get_value" id="TYRC|EGZc[{q_Rb`R$+I">
+                                            <field name="ATTR">val</field>
+                                            <field name="OID">0_userdata.0.Luefter.Fan-State</field>
+                                          </block>
+                                        </value>
+                                        <value name="B">
+                                          <block type="get_value" id="K]AEnsygDGY,wT3wC-S.">
+                                            <field name="ATTR">val</field>
+                                            <field name="OID">0_userdata.0.Luefter.Fan-soll</field>
+                                          </block>
+                                        </value>
+                                      </block>
+                                    </value>
+                                    <statement name="DO">
+                                      <block type="controls_if" id="~Hfb(FXUXPvz?j.V]I?5">
+                                        <value name="IF0">
+                                          <block type="logic_compare" id="0?BUgZ0dy~yyZf3!g9?d">
+                                            <field name="OP">LT</field>
+                                            <value name="A">
+                                              <block type="get_value" id="QSu5|^(4RW`1GwWu6x;7">
+                                                <field name="ATTR">val</field>
+                                                <field name="OID">0_userdata.0.Luefter.Fan-State</field>
+                                              </block>
+                                            </value>
+                                            <value name="B">
+                                              <block type="get_value" id=";fCh)@5M!}J:7aP:+(Yl">
+                                                <field name="ATTR">val</field>
+                                                <field name="OID">0_userdata.0.Luefter.Fan-soll</field>
+                                              </block>
+                                            </value>
+                                          </block>
+                                        </value>
+                                        <statement name="DO0">
+                                          <block type="control" id="Y2$-pE^)bv2ui/z@a#3]">
+                                            <mutation xmlns="http://www.w3.org/1999/xhtml" delay_input="false"></mutation>
+                                            <field name="OID">mqtt.0.cmnd.tasmota_luefter.RfCode</field>
+                                            <field name="WITH_DELAY">FALSE</field>
+                                            <value name="VALUE">
+                                              <block type="text" id="m^!yzWp-y^or,XP0/osF">
+                                                <field name="TEXT">#083264</field>
+                                              </block>
+                                            </value>
+                                            <next>
+                                              <block type="control" id="f#gs{WvU[;}2_4|$04_o">
+                                                <mutation xmlns="http://www.w3.org/1999/xhtml" delay_input="true"></mutation>
+                                                <field name="OID">mqtt.0.cmnd.tasmota_luefter.RfCode</field>
+                                                <field name="WITH_DELAY">TRUE</field>
+                                                <field name="DELAY_MS">500</field>
+                                                <field name="UNIT">ms</field>
+                                                <field name="CLEAR_RUNNING">FALSE</field>
+                                                <value name="VALUE">
+                                                  <block type="text" id="Q/(zW?C3!^N)Pt;;U5Tp">
+                                                    <field name="TEXT">1</field>
+                                                  </block>
+                                                </value>
+                                                <next>
+                                                  <block type="timeouts_wait" id="@uL({D(t7Bfm!E2mI#WW">
+                                                    <field name="DELAY">10</field>
+                                                    <field name="UNIT">sec</field>
+                                                  </block>
+                                                </next>
+                                              </block>
+                                            </next>
+                                          </block>
+                                        </statement>
+                                        <next>
+                                          <block type="controls_if" id="mK,eqh*=/ofexW*iiRA.">
+                                            <value name="IF0">
+                                              <block type="logic_compare" id="7D)@VpInUe}b-2l48@E9">
+                                                <field name="OP">GT</field>
+                                                <value name="A">
+                                                  <block type="get_value" id="SuW0s_cjW{}Lq~QekgBu">
+                                                    <field name="ATTR">val</field>
+                                                    <field name="OID">0_userdata.0.Luefter.Fan-State</field>
+                                                  </block>
+                                                </value>
+                                                <value name="B">
+                                                  <block type="get_value" id="qH5elk;S.61sDp.sE{m]">
+                                                    <field name="ATTR">val</field>
+                                                    <field name="OID">0_userdata.0.Luefter.Fan-soll</field>
+                                                  </block>
+                                                </value>
+                                              </block>
+                                            </value>
+                                            <statement name="DO0">
+                                              <block type="control" id="]P9P|ksP@2r(8.=~2+A/">
+                                                <mutation xmlns="http://www.w3.org/1999/xhtml" delay_input="false"></mutation>
+                                                <field name="OID">mqtt.0.cmnd.tasmota_luefter.RfCode</field>
+                                                <field name="WITH_DELAY">FALSE</field>
+                                                <value name="VALUE">
+                                                  <block type="text" id="Gw%ZjDp]7J2M}y5Myf[x">
+                                                    <field name="TEXT">#083262</field>
+                                                  </block>
+                                                </value>
+                                                <next>
+                                                  <block type="control" id="+phv%[i;s{yrh4n%-pV7">
+                                                    <mutation xmlns="http://www.w3.org/1999/xhtml" delay_input="true"></mutation>
+                                                    <field name="OID">mqtt.0.cmnd.tasmota_luefter.RfCode</field>
+                                                    <field name="WITH_DELAY">TRUE</field>
+                                                    <field name="DELAY_MS">500</field>
+                                                    <field name="UNIT">ms</field>
+                                                    <field name="CLEAR_RUNNING">FALSE</field>
+                                                    <value name="VALUE">
+                                                      <block type="text" id="%1;v9zQw$Zo6=mkpi*y3">
+                                                        <field name="TEXT">1</field>
+                                                      </block>
+                                                    </value>
+                                                    <next>
+                                                      <block type="timeouts_wait" id="ooB]gozEEXQ]4ro[g4ww">
+                                                        <field name="DELAY">10</field>
+                                                        <field name="UNIT">sec</field>
+                                                      </block>
+                                                    </next>
+                                                  </block>
+                                                </next>
+                                              </block>
+                                            </statement>
+                                          </block>
+                                        </next>
+                                      </block>
+                                    </statement>
+                                  </block>
+                                </statement>
+                              </block>
+                            </next>
+                          </block>
+                        </next>
+                      </block>
+                    </next>
+                  </block>
+                </next>
+              </block>
+            </next>
+          </block>
+        </next>
+      </block>
+    </statement>
+  </block>
+</xml>

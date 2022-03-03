@@ -1,0 +1,209 @@
+<xml xmlns="https://developers.google.com/blockly/xml">
+  <block type="on_ext" id="1NisGIa0mLcGJGy4{o{/" x="63" y="588">
+    <mutation xmlns="http://www.w3.org/1999/xhtml" items="3"></mutation>
+    <field name="CONDITION">ne</field>
+    <field name="ACK_CONDITION"></field>
+    <value name="OID0">
+      <shadow type="field_oid" id="cm!oX,IzJyqcq!=Iioct">
+        <field name="oid">0_userdata.0.Luefter.Funksteuerung.Fan_Taster</field>
+      </shadow>
+    </value>
+    <value name="OID1">
+      <shadow type="field_oid" id="iCR^]]AJ8}E/ts:,%0Sd">
+        <field name="oid">0_userdata.0.Luefter.Funksteuerung.Fan_Taster_Doppelklick</field>
+      </shadow>
+    </value>
+    <value name="OID2">
+      <shadow type="field_oid" id="b%IOMw/u?xnMItAPjhp%">
+        <field name="oid">0_userdata.0.Luefter.Funksteuerung.Fan_automatik</field>
+      </shadow>
+    </value>
+    <statement name="STATEMENT">
+      <block type="comment" id="aJ@F[|X,Lexhu:K0a`M$">
+        <field name="COMMENT">Soll = aus</field>
+        <next>
+          <block type="controls_if" id="7ebH=_L~c#?A6#eg#W`)">
+            <value name="IF0">
+              <block type="logic_operation" id="KOdBaHKh-]{7_$eyh5_x" inline="false">
+                <field name="OP">AND</field>
+                <value name="A">
+                  <block type="logic_negate" id="SbMqBqB*1MrCyCHl=3io">
+                    <value name="BOOL">
+                      <block type="get_value" id="8YWc,K6oVE,)_kj7;YE.">
+                        <field name="ATTR">val</field>
+                        <field name="OID">0_userdata.0.Luefter.Funksteuerung.Fan_automatik</field>
+                      </block>
+                    </value>
+                  </block>
+                </value>
+                <value name="B">
+                  <block type="logic_operation" id="7d5y%o=Qi|cmr,ZDm^6Z" inline="false">
+                    <field name="OP">AND</field>
+                    <value name="A">
+                      <block type="logic_negate" id=":*{7*1?Zo4Wkzx#(L);w">
+                        <value name="BOOL">
+                          <block type="get_value" id="#J3P[8ui*H[*NGka(B%K">
+                            <field name="ATTR">val</field>
+                            <field name="OID">0_userdata.0.Luefter.Funksteuerung.Fan_Taster</field>
+                          </block>
+                        </value>
+                      </block>
+                    </value>
+                    <value name="B">
+                      <block type="logic_negate" id="Ta^;#FagM.wlhDr8+t!p">
+                        <value name="BOOL">
+                          <block type="get_value" id="t5sEPo.QEIVrEUW^NWF6">
+                            <field name="ATTR">val</field>
+                            <field name="OID">0_userdata.0.Luefter.Funksteuerung.Fan_Taster_Doppelklick</field>
+                          </block>
+                        </value>
+                      </block>
+                    </value>
+                  </block>
+                </value>
+              </block>
+            </value>
+            <statement name="DO0">
+              <block type="control" id="2~1vD;R:8#6|LSF54aGn">
+                <mutation xmlns="http://www.w3.org/1999/xhtml" delay_input="false"></mutation>
+                <field name="OID">0_userdata.0.Luefter.Fan-soll</field>
+                <field name="WITH_DELAY">FALSE</field>
+                <value name="VALUE">
+                  <block type="math_number" id="Qtd(iiL=QK`Cc0LJ7]73">
+                    <field name="NUM">0</field>
+                  </block>
+                </value>
+              </block>
+            </statement>
+            <next>
+              <block type="comment" id="7N4XnNu#lfJLJ/~sYL#f">
+                <field name="COMMENT">Soll = Stufe 1</field>
+                <next>
+                  <block type="controls_if" id="a5HGI^@q$Ihfj^q=x9zo">
+                    <value name="IF0">
+                      <block type="logic_operation" id=":QYkwVXpPn*-M?uVjx0Y" inline="false">
+                        <field name="OP">AND</field>
+                        <value name="A">
+                          <block type="get_value" id="F(nY;jfqQ*hUWZWq^UKc">
+                            <field name="ATTR">val</field>
+                            <field name="OID">0_userdata.0.Luefter.Funksteuerung.Fan_automatik</field>
+                          </block>
+                        </value>
+                        <value name="B">
+                          <block type="logic_operation" id="ID=@CG!+-_5bD`?1J;fT" inline="false">
+                            <field name="OP">AND</field>
+                            <value name="A">
+                              <block type="logic_negate" id="|[X9+Z@#kjM@q#1Q20a)">
+                                <value name="BOOL">
+                                  <block type="get_value" id="@Lw(kr}eHSk+YX%m2pJ6">
+                                    <field name="ATTR">val</field>
+                                    <field name="OID">0_userdata.0.Luefter.Funksteuerung.Fan_Taster</field>
+                                  </block>
+                                </value>
+                              </block>
+                            </value>
+                            <value name="B">
+                              <block type="logic_negate" id="7}O[/(lJ/MvlDTW0jCo9">
+                                <value name="BOOL">
+                                  <block type="get_value" id="jphWBOc0HAtG98[A){m,">
+                                    <field name="ATTR">val</field>
+                                    <field name="OID">0_userdata.0.Luefter.Funksteuerung.Fan_Taster_Doppelklick</field>
+                                  </block>
+                                </value>
+                              </block>
+                            </value>
+                          </block>
+                        </value>
+                      </block>
+                    </value>
+                    <statement name="DO0">
+                      <block type="control" id="K=M4jq]@~5gtTYo)RBwT">
+                        <mutation xmlns="http://www.w3.org/1999/xhtml" delay_input="false"></mutation>
+                        <field name="OID">0_userdata.0.Luefter.Fan-soll</field>
+                        <field name="WITH_DELAY">FALSE</field>
+                        <value name="VALUE">
+                          <block type="math_number" id="~{KW:)Bq5y$1r~FF10E*">
+                            <field name="NUM">1</field>
+                          </block>
+                        </value>
+                      </block>
+                    </statement>
+                    <next>
+                      <block type="comment" id="tL?vv4D=7@My_gT})e:d">
+                        <field name="COMMENT">Soll = Stufe 2</field>
+                        <next>
+                          <block type="controls_if" id="qEhb|`.SEysN/Tc_K+b8">
+                            <value name="IF0">
+                              <block type="logic_operation" id="+H`Bf:tRMIH@q/2qKy?(" inline="false">
+                                <field name="OP">AND</field>
+                                <value name="A">
+                                  <block type="get_value" id="@2L+(Di#O8q{jBKzKS|=">
+                                    <field name="ATTR">val</field>
+                                    <field name="OID">0_userdata.0.Luefter.Funksteuerung.Fan_Taster</field>
+                                  </block>
+                                </value>
+                                <value name="B">
+                                  <block type="logic_negate" id="rha@9,$Y:*dxqcBdU4_k">
+                                    <value name="BOOL">
+                                      <block type="get_value" id="CD[Ech$Tw~S8S9^EELii">
+                                        <field name="ATTR">val</field>
+                                        <field name="OID">0_userdata.0.Luefter.Funksteuerung.Fan_Taster_Doppelklick</field>
+                                      </block>
+                                    </value>
+                                  </block>
+                                </value>
+                              </block>
+                            </value>
+                            <statement name="DO0">
+                              <block type="control" id="fN8zw$66P+0n=.9hp|U@">
+                                <mutation xmlns="http://www.w3.org/1999/xhtml" delay_input="false"></mutation>
+                                <field name="OID">0_userdata.0.Luefter.Fan-soll</field>
+                                <field name="WITH_DELAY">FALSE</field>
+                                <value name="VALUE">
+                                  <block type="math_number" id="+F[@!l*cfX[f@{][sBon">
+                                    <field name="NUM">2</field>
+                                  </block>
+                                </value>
+                              </block>
+                            </statement>
+                            <next>
+                              <block type="comment" id="iC0@OyQGFjE3/#Bn6T:D">
+                                <field name="COMMENT">Soll = Stufe 3</field>
+                                <next>
+                                  <block type="controls_if" id="cUo)W]ZbtjqLzNvql*w2">
+                                    <value name="IF0">
+                                      <block type="get_value" id="RNyIx|~i-OG-48^RH/|f">
+                                        <field name="ATTR">val</field>
+                                        <field name="OID">0_userdata.0.Luefter.Funksteuerung.Fan_Taster_Doppelklick</field>
+                                      </block>
+                                    </value>
+                                    <statement name="DO0">
+                                      <block type="control" id="VeArX+3YvLzzUZnuOVZY">
+                                        <mutation xmlns="http://www.w3.org/1999/xhtml" delay_input="false"></mutation>
+                                        <field name="OID">0_userdata.0.Luefter.Fan-soll</field>
+                                        <field name="WITH_DELAY">FALSE</field>
+                                        <value name="VALUE">
+                                          <block type="math_number" id="p-g6ma*vPqx.=$SD3jaU">
+                                            <field name="NUM">3</field>
+                                          </block>
+                                        </value>
+                                      </block>
+                                    </statement>
+                                  </block>
+                                </next>
+                              </block>
+                            </next>
+                          </block>
+                        </next>
+                      </block>
+                    </next>
+                  </block>
+                </next>
+              </block>
+            </next>
+          </block>
+        </next>
+      </block>
+    </statement>
+  </block>
+</xml>
